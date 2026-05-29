@@ -1,4 +1,8 @@
 package joaquinsanchezstreamingapp;
+//Proyecto hecho por: JoaquinSanchez
+//Carne:2026117
+//CodigoAcademico:IN4CM
+//FUNDACION KINAL
 
 import java.util.Scanner;
 import org.joaquinsanchez.controller.EstudioCineController;
