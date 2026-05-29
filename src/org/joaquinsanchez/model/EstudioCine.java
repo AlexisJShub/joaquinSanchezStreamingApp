@@ -6,11 +6,9 @@ public class EstudioCine {
     private String pais;
     private String sedeCentral;
 
-    // Constructor vacio
     public EstudioCine() {
     }
 
-    // Constructor con parametros
     public EstudioCine(int idEstudio, String nombreEstudio, String pais, String sedeCentral) {
         this.idEstudio = idEstudio;
         this.nombreEstudio = nombreEstudio;
@@ -18,7 +16,6 @@ public class EstudioCine {
         this.sedeCentral = sedeCentral;
     }
 
-    // Métodos Getters y Setters
     public int getIdEstudio() {
         return idEstudio;
     }

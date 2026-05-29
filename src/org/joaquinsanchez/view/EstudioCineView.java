@@ -2,9 +2,9 @@ package org.joaquinsanchez.view;
 
 import java.util.List;
 import java.util.Scanner;
+import org.joaquinsanchez.model.EstudioCine;
 
 public class EstudioCineView {
-
     private final Scanner leer = new Scanner(System.in);
 
     public int mostrarMenu() {
@@ -41,8 +41,7 @@ public class EstudioCineView {
 
     public void mostrarTodos(List<EstudioCine> estudios) {
         System.out.println("\n+++ LISTA DE ESTUDIOS DE CINE +++");
-        System.out.printf("%-6s %-30s %-20s %-30s%n",
-                "ID", "NOMBRE", "PAIS", "SEDE CENTRAL");
+        System.out.printf("%-6s %-30s %-20s %-30s%n", "ID", "NOMBRE", "PAIS", "SEDE CENTRAL");
         System.out.println("------------------------------------------------------------------------------------------");
         for (EstudioCine e : estudios) {
             System.out.printf("%-6d %-30s %-20s %-30s%n",

@@ -5,7 +5,6 @@ import java.util.Scanner;
 import org.joaquinsanchez.model.Usuario;
 
 public class UsuarioView {
-
     private final Scanner leer = new Scanner(System.in);
 
     public int mostrarMenu() {
@@ -31,7 +30,7 @@ public class UsuarioView {
     }
 
     public String solicitarCorreo() {
-        System.out.print("Ingrese el correo: ");
+        System.out.print("Ingrese el correo electronico: ");
         return leer.nextLine();
     }
 
@@ -42,10 +41,10 @@ public class UsuarioView {
 
     public void mostrarTodos(List<Usuario> usuarios) {
         System.out.println("\n+++ LISTA DE USUARIOS +++");
-        System.out.printf("%-10s %-20s %-35s%n", "ID", "USERNAME", "CORREO");
+        System.out.printf("%-10s %-25s %-35s%n", "ID", "USERNAME", "CORREO");
         System.out.println("----------------------------------------------------------------------");
         for (Usuario u : usuarios) {
-            System.out.printf("%-10d %-20s %-35s%n",
+            System.out.printf("%-10d %-25s %-35s%n",
                     u.getIdUsuario(),
                     u.getUsername(),
                     u.getCorreo());
@@ -54,9 +53,9 @@ public class UsuarioView {
 
     public void mostrarUsuario(Usuario usuario) {
         System.out.println("\nDETALLE DEL USUARIO");
-        System.out.println("ID       : " + usuario.getIdUsuario());
-        System.out.println("USERNAME : " + usuario.getUsername());
-        System.out.println("CORREO   : " + usuario.getCorreo());
+        System.out.println("ID      : " + usuario.getIdUsuario());
+        System.out.println("USERNAME: " + usuario.getUsername());
+        System.out.println("CORREO  : " + usuario.getCorreo());
     }
 
     public void mostrarMensaje(String mensaje) {

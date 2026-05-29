@@ -7,23 +7,24 @@ import java.sql.SQLException;
 public class Conexion {
     private Connection conexion;
     
-    // Configuración de la base de datos de tu script
-    private final String URL = "jdbc:mysql://localhost:3306/streamingdb_in4cm";
-    private final String USER = "root";
-    private final String PASSWORD = ""; // Si tu MySQL tiene contraseña, ponla aquí (ej: "admin")
+    private final String BASE_DATOS = "streamingdb_in4cm"; 
+    
+    private final String URL = "jdbc:mysql://localhost:3306/" + BASE_DATOS + "?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
+    
+    private final String USUARIO = "root";       
+    private final String CONTRASENA = "bZ7#qW9!fL";  
+    // =========================================================================
 
     public Connection conectar() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (ClassNotFoundException e) {
-            System.out.println("Error: No se encontro el Driver de MySQL.");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexion = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+            return conexion;
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("No se pudo establecer la conexion.");
             e.printStackTrace();
-        } catch (SQLException e) {
-            System.out.println("Error: No se pudo conectar a la base de datos.");
-            e.printStackTrace();
+            return null;
         }
-        return conexion;
     }
 
     public void desconectar() {
@@ -33,6 +34,14 @@ public class Conexion {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void verificarConexion() {
+        Connection ejecucionTest = conectar();
+        if (ejecucionTest != null) {
+            System.out.println("¡Conexion establecida con exito a MySQL!");
+            desconectar();
         }
     }
 }

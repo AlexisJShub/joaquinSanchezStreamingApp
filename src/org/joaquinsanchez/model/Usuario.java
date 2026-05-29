@@ -4,19 +4,18 @@ public class Usuario {
     private int idUsuario;
     private String username;
     private String correo;
+    private String contrasena;
 
-    // Constructor vacio
     public Usuario() {
     }
 
-    // Constructor con parametros
-    public Usuario(int idUsuario, String username, String correo) {
+    public Usuario(int idUsuario, String username, String correo, String contrasena) {
         this.idUsuario = idUsuario;
         this.username = username;
         this.correo = correo;
+        this.contrasena = contrasena;
     }
 
-    // Métodos Getters y Setters
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -39,5 +38,13 @@ public class Usuario {
 
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 }
