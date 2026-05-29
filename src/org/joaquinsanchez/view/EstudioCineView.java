@@ -2,7 +2,6 @@ package org.joaquinsanchez.view;
 
 import java.util.List;
 import java.util.Scanner;
-import org.joaquinsanchez.controller.EstudioCine;
 
 public class EstudioCineView {
 
